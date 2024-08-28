@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>移动用户</title>
+</head>
+<body>
+    <h1>移动用户</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">保存更改</button>
+    </form>
+</body>
+</html>

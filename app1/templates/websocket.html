@@ -1,0 +1,29 @@
+<!-- templates/websocket.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Example</title>
+</head>
+<body>
+    <h1>WebSocket Example</h1>
+    <div id="websocket-messages"></div>
+        
+
+    <script>
+        const socket = new WebSocket('ws://38.181.48.33:8003/ws/some_path/');  // WebSocket连接的URL
+        const messageDiv = document.getElementById('websocket-messages');
+
+        socket.onmessage = function (e) {
+            const data = JSON.parse(e.data);
+            messageDiv.innerHTML += '<p>' + data.message + '</p>';
+        };
+
+        document.getElementById('websocket-form').onsubmit = function (e) {
+            e.preventDefault();
+            const messageInput = document.getElementById('message-input');
+            socket.send(JSON.stringify({ 'message': messageInput.value }));
+            messageInput.value = '';
+        };
+    </script>
+</body>
+</html>

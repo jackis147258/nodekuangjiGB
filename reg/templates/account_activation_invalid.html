@@ -1,0 +1,17 @@
+
+
+
+<!-- account_activation_invalid.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Activation Link Invalid</h2>
+  <p>
+    The account activation link you clicked is invalid, it may have already been used, or expired.
+  </p>
+  <p>
+    If you need to resend the activation email, please <a href="{% url 'resend_activation_link' user.id %}">click here</a>.
+  </p>
+{% endblock %}
+

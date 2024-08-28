@@ -1,0 +1,27 @@
+<style>
+    #data {
+        width: 400px;    /* 设置宽度 */
+        height: 200px;   /* 设置高度 */
+    }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    <h2>{{ tips }}</h2>
+    
+  
+
+    <select name="category" id="category">
+        {% for category in categories %}
+        <option value="{{ category.value }}">{{ category.label }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <textarea name="data" id="data" rows="10"></textarea>
+
+    <br><br>
+
+    <input type="submit" value="提交">
+</form>

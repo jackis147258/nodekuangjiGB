@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户详情</title>
+    <style>
+        .child-node { display: none; margin-left: 20px; }
+        .node { cursor: pointer; }
+        .indicator { font-weight: bold; margin-right: 5px; }
+    </style>
+    <script>
+        function toggleChildren(node) {
+            var children = node.parentNode.querySelector(".child-node");
+            if (children.style.display === "none") {
+                children.style.display = "block";
+                node.querySelector('.indicator').textContent = '-';
+            } else {
+                children.style.display = "none";
+                node.querySelector('.indicator').textContent = '+';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>用户详情</h1>
+    <p>用户名: {{ user.username }}</p>
+    <p>邮箱: {{ user.email }}</p>
+
+    <h2>下级用户列表</h2>
+    {% if descendants %}
+        <div class="tree">
+            <div class="node" onclick="toggleChildren(this);">
+                <span class="indicator">+</span>
+                {{ user.username }} 的下级
+            </div>
+            <div class="child-node">
+                {% for descendant in descendants %}
+                    <div class="node" onclick="toggleChildren(this);">
+                        <span class="indicator">{% if descendant.get_children %}+{% else %}&nbsp;{% endif %}</span>
+                        {{ descendant.username }}
+                    </div>
+                    {% if descendant.get_children %}
+                        <div class="child-node">
+                            {% include "user_hierarchy.html" with root_nodes=descendant.get_children %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <p>没有下级用户。</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,915 @@
+'<html lang="en" style="--app-height: 600px; --app-width: 800px;">
+
+<head>\n
+    <meta charset="utf-8">\n <!-- Links -->\n
+    <link rel="preconnect" href="https://fonts.gstatic.com">\n
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap"
+        as="style" onload="this.onload=null;this.rel=\'stylesheet\'">\n <noscript>\n
+        <link\n
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+            \n rel="stylesheet" \n type="text/css" \n />\n
+    </noscript>\n
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">\n
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">\n
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">\n
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">\n
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">\n
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">\n
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">\n
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">\n
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">\n
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">\n
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">\n
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">\n
+    <link rel="manifest" href="/manifest.json">\n\n
+    <meta name="msapplication-TileColor" content="#ffffff">\n
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">\n
+    <meta name="theme-color" content="#ffffff">\n <!-- Meta -->\n <title>\n Arken Finance - DeFi/DEX aggregator with the
+        best rates swap and the most realtime trading view in the world.\n </title>\n
+    <meta name="application-name" content="Arken Finance">\n\n
+    <meta name="description"
+        content="Best rate swap and realtime tradingview, Arken offers DeFi/DEX aggregator with the best rates and realtime trading view to help you discover treasures from decentralized exchange on Ethereum, Binance Smart Chain and Polygon Chain.">
+    \n\n <!--  home screen web  -->\n
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, viewport-fit=cover">\n
+    <meta name="mobile-web-app-capable" content="yes">\n
+    <meta name="apple-mobile-web-app-capable" content="yes">\n\n
+    <meta name="theme-color" content="#17263E">\n
+    <meta name="fortmatic-site-verification" content="j93LgcVZk79qcgyo">\n
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    \n\n
+    <meta property="og:site_name" content="Arken Finance">\n \n \n \n \n \n \n\n \n
+    <meta property="twitter:creator" content="@ArkenFinance">\n
+    <meta property="twitter:site" content="https://arken.finance">\n
+    <meta property="twitter:card" content="summary_large_image">\n \n \n
+    <link rel="preconnect" href="https://cdn.onesignal.com/">\n\n
+    <script type="text/javascript" async="" src="https://widget.intercom.io/widget/tg94vkiv"></script>
+    <script async="" src="https://www.clarity.ms/s/0.7.10/clarity.js"></script>
+    <script type="text/javascript" async="" src="https://certify-js.alexametrics.com/atrk.js"></script>
+    <script type="text/javascript" async=""
+        src="https://www.googletagmanager.com/gtag/js?id=G-905M3BN4MG&amp;l=dataLayer&amp;cx=c"></script>
+    <script async="" src="https://www.clarity.ms/tag/frftg6ws0r"></script>
+    <script async="" src="https://s.adroll.com/j/J5PHW4Z74JABLEDJO3FGX7/roundtrip.js"></script>
+    <script
+        src="https://connect.facebook.net/signals/config/250077106454426?v=2.9.127&amp;r=stable&amp;domain=swap.arken.finance"
+        async=""></script>
+    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script async="" src="//static.ads-twitter.com/uwt.js"></script>
+    <script type="text/javascript" async="" src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+    <script type="text/javascript" integrity="sha384-u0hlTAJ1tNefeBKwiBNwB4CkHZ1ck4ajx/pKmwWtc+IufKJiCQZ+WjJIi+7C6Ntm"
+        crossorigin="anonymous" async="" src="https://cdn.amplitude.com/libs/amplitude-8.1.0-min.gz.js"></script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async=""
+        src="https://www.googletagmanager.com/gtm.js?id=GTM-M48JNTT&amp;gtm_auth=TJzUpn9oym-iXROV0oi3kQ&amp;gtm_preview=env-1&amp;gtm_cookies_win=x"></script>
+    <script>\n; (function (w, d, s, l, i) {
+        \n        w[l] = w[l] || []\n        w[l].push({
+        \'gtm.start\': new Date().getTime(), event: \'gtm.js\' })\n        var f = d.getElementsByTagName(s)[0],\n          j = d.createElement(s),\n          dl = l != \'dataLayer\' ? \'&l=\' + l : \'\'\n        j.async = true\n        j.src =\n          \'https://www.googletagmanager.com/gtm.js?id=\' +\n          i +\n          dl +\n          \'&gtm_auth=TJzUpn9oym-iXROV0oi3kQ&gtm_preview=env-1&gtm_cookies_win=x\'\n        f.parentNode.insertBefore(j, f)\n      })(window, document, \'script\', \'dataLayer\', \'GTM-M48JNTT\')\n    </script>
+    \n <!-- End Google Tag Manager -->\n\n
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>\n
+    <script>\n      window.prerenderReady = false\n      window.OneSignal = window.OneSignal || []\n      OneSignal.push(function () {
+                \n        window.OneSignalInit = OneSignal.init({
+                \n          appId: \'%REACT_APP_ONESIGNAL%\',\n          allowLocalhostAsSecureOrigin: \'%NODE_ENV%\' === \'development\',\n        })\n      })\n    </script>
+    \n
+    <script
+        type="application/ld+json">\n      {\n        "@context": "https://schema.org",\n        "@type": "Organization",\n        "name": "Arken Finance",\n        "url": "https://arken.finance",\n        "logo": "https://arken.finance/images/arken-logo.svg",\n        "sameAs": [\n          "https://www.facebook.com/arkenfinance",\n          "https://twitter.com/ArkenFinance",\n          "https://t.me/arkenfinance"\n        ]\n      }\n    </script>
+    \n
+    <link rel="preload" as="image" href="/images/airdrop-thankyou-campaign-gift-box.png">\n \n
+    <script type="module" crossorigin="" src="/assets/index-81bc0c03.js"></script>\n
+    <link rel="stylesheet" href="/assets/index-1dd6e27c.css">\n
+    <script src="https://cdn.onesignal.com/sdks/OneSignalPageSDKES6.js?v=151604" async=""></script>
+    <style data-emotion="css-global" data-s=""></style>
+    <style data-emotion="css" data-s=""></style>
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/TradePage-46e2c8ea.js">
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/comparisonStore-a6fb2e5c.js">
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/TradeSwapPanel-412d838b.js">
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/useQueryString-1f4d6657.js">
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/useNavigateMobile-c70c6e2a.js">
+    <link rel="stylesheet" href="/assets/TradePage-738bcf4f.css">
+    <style data-emotion="css"></style>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="https://cdn.lr-ingest.io/logger-1.min.js" async=""></script>
+    <script async="" src="https://static.hotjar.com/c/hotjar-2472416.js?sv=6"></script>
+    <meta http-equiv="origin-trial"
+        content="A41wt2Lsq30A9Ox/WehogvJckPI4aY9RoSxhb8FMtVnqaUle1AtI6Yf7Wk+7+Wm0AfDDOkMX+Wn6wnDpBWYgWwYAAAB8eyJvcmlnaW4iOiJodHRwczovL2Fkcm9sbC5jb206NDQzIiwiZmVhdHVyZSI6IkludGVyZXN0Q29ob3J0QVBJIiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <script id="adroll_scr_exp" onerror="window.adroll_exp_list = [];" type="text/javascript"
+        src="https://s.adroll.com/j/exp/J5PHW4Z74JABLEDJO3FGX7/index.js"></script>
+    <script type="text/javascript"
+        src="https://d.adroll.com/consent/check/J5PHW4Z74JABLEDJO3FGX7?pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;_s=13e2baa0153bea7f121814194fac3160&amp;_b=2"></script>
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/TradingView-c75b931f.js">
+    <link rel="modulepreload" as="script" crossorigin="" href="/assets/index-81bc0c03.js">
+    <div style="width: 1px; height: 1px; display: inline; position: absolute;"><img height="1" width="1"
+            style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/b/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/g/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/index/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/n/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/o/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/outbrain/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/pubmatic/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/taboola/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/triplelift/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7"><img
+            height="1" width="1" style="border-style:none;" alt=""
+            src="https://d.adroll.com/cm/x/out?adroll_fpc=1a6f58f1cf8218cb9e986e14417d384c-1695229090432&amp;pv=60099922774.77887&amp;arrfrr=https%3A%2F%2Fswap.arken.finance%2Ftokens%2Fbsc%2F0x768a62a22b187eb350637e720ebc552d905c0331&amp;advertisable=J5PHW4Z74JABLEDJO3FGX7">
+    </div>
+    <div style="width: 1px; height: 1px; display: inline; position: absolute;"></div>
+</head>\n\n
+
+<body>\n <noscript>You need to enable JavaScript to run this app.</noscript>\n\n <div id="root">
+        <div class="w-full force-dark-theme dark">
+            <div class="css-3oacdi e1ivwj4s0">
+                <style>
+                    \n :root {
+                        \n --accent-primary: #E8652E;
+                        \n --accent-red: #D43955;
+                        \n --accent-green: #1E9D70;
+                        \n --accent-blue: #48C1C8;
+                        \n --accent-fadeBlue: #10393B;
+                        \n --accent-yellow: #F8BA2A;
+                        \n --accent-orange: #E8652E;
+                        \n --accent-danger: #E43C46;
+                        \n --accent-fadeOrange: #422A21;
+                        \n --accent-fadeOrangeSecondary: #58382C;
+                        \n --accent-fadeRed: #3C0F17;
+                        \n --accent-fadeYellow: #3C2F11;
+                        \n --accent-dimmedOrange: #BF5428;
+                        \n --typography-solid: #FFFFFF;
+                        \n --typography-title: #F0F2F2;
+                        \n --typography-body: #E0E4E6;
+                        \n --typography-description: #7E8991;
+                        \n --typography-disable: #4D5866;
+                        \n --typography-theme: #0D1112;
+                        \n --typography-textWhiteDisable: #6B777F;
+                        \n --typography-label-stable-coin: #53CDD4;
+                        \n --component-borderLine: #39434C;
+                        \n --component-horizontalLine: #322723;
+                        \n --component-tableLine: #39434C;
+                        \n --component-graphLine: #39434C;
+                        \n --component-tooltip: #39434C;
+                        \n --component-tooltip-shadow: rgba(0, 0, 0, 0.75);
+                        \n --component-chart: #39434C;
+                        \n --component-button: #39434C;
+                        \n --component-buttonHover: #293237;
+                        \n --component-background: #0D1112;
+                        \n --component-topBar: #161B1D;
+                        \n --component-topBarMobile: #0D1112;
+                        \n --component-textFieldBackground: #161B1D;
+                        \n --component-tradingViewGrid: #161B1D;
+                        \n --component-card: #21282C;
+                        \n --component-input: #39434C;
+                        \n --component-swapBox: #21282C;
+                        \n --component-backgroundMarket: #161B1D;
+                        \n --component-backgroundTrade: #161B1D;
+                        \n --component-buttonDisabled: #39434C;
+                        \n --component-buttonDisabledContrast: #293237;
+                        \n --component-assetItem-highlight: rgba(232, 101, 46, 0.06);
+                        \n --component-assetItem-hover: rgba(232, 101, 46, 0.13);
+                        \n --component-assetItem-hover: rgba(232, 101, 46, 0.13);
+                        \n --component-assetItemSolid-hover: #322520;
+                        \n --component-select-background: #21282C;
+                        \n --component-select-hoverBackground: #39434C;
+                        \n --component-textField-borderLine: #4D5866;
+                        \n --component-textField-hoverBorderLine: #7E8991;
+                        \n --component-shadow: rgb(0 0 0 / 20%);
+                        \n --component-antdTooltipShadow: 0px 0px 32px rgba(212, 212, 212, 0.75);
+                        \n --gradient-primary: linear-gradient(94.8deg, #F4C14B -4.53%, #F1642D 50.67%, #F16237 108.21%);
+                        \n --gradient-secondary: linear-gradient(94.8deg, #F4C14B -4.53%, #F1642D 50.67%, #F147A1 108.21%);
+                        \n --gradient-tertiary: linear-gradient(263.72deg, rgba(255, 189, 20, 0.05) -10.41%, rgba(232, 103, 48, 0.05) 30.52%, rgba(219, 77, 153, 0.05) 108.2%);
+                        \n --image-gradient-button-primary-hover: linear-gradient(92.14deg, #F4C14B -5.61%, #F1642D 104.62%, #F16237 182.72%);
+                        \n --component-buttonShadow-primary: rgba(145, 74, 243, 0.85);
+                        \n --component-buttonHover-primary: #f07642;
+                        \n --component-buttonHoverShadow-primary: rgba(232, 101, 46, 0.85);
+                        \n --component-buttonHoverShadow-secondary: rgba(232, 101, 46, 0.85);
+                        \n --component-label-stable-coin: #12393B;
+                        \n --component-swapBoxInput-hover: #0D1012;
+                        \n --component-marketFilterTab-background: #22282C;
+                        \n --component-marketFilterTab-hover: #1D2326;
+                        \n --component-marketFilterItem-background: #3B434B;
+                        \n --component-marketFilterItem-hover: #2D333A;
+                        \n --component-boxShadow: 0px 0px 32px rgba(0, 0, 0, 0.55);
+                        \n --earn-button-border: #252C32;
+                        \n --earn-button-background: rgba(0, 0, 0, 0.4);
+                        \n --earn-button-hoverBackground: rgba(0, 0, 0, 0.4);
+                        \n --earn-button-hoverBorder: #252C32;
+                        \n --earn-button-text: #EDEFF2;
+                        \n
+                    }
+
+                    \n .force-day-theme {
+                        \n --accent-primary: #E8652E;
+                        \n --accent-red: #F14C80;
+                        \n --accent-green: #15C183;
+                        \n --accent-blue: #53CDD4;
+                        \n --accent-fadeBlue: #EFFAFB;
+                        \n --accent-yellow: #F8BA2A;
+                        \n --accent-orange: #E8652E;
+                        \n --accent-danger: #DD2631;
+                        \n --accent-fadeOrange: #FDF0EB;
+                        \n --accent-fadeOrangeSecondary: #FFDBCC;
+                        \n --accent-fadeRed: #FFE5EA;
+                        \n --accent-fadeYellow: #FEF9EB;
+                        \n --accent-dimmedOrange: #BF5428;
+                        \n --typography-solid: #0D1112;
+                        \n --typography-title: #21282C;
+                        \n --typography-body: #39434C;
+                        \n --typography-description: #7E8991;
+                        \n --typography-disable: #B5BDC1;
+                        \n --typography-theme: #FFFFFF;
+                        \n --typography-textWhiteDisable: #FFFFFF;
+                        \n --typography-label-stable-coin: #FFFFFF;
+                        \n --component-borderLine: #E0E4E6;
+                        \n --component-horizontalLine: #E0E4E6;
+                        \n --component-tableLine: #E0E4E6;
+                        \n --component-graphLine: #E0E4E6;
+                        \n --component-tooltip: #FFFFFF;
+                        \n --component-tooltip-shadow: rgba(212, 212, 212, 0.75);
+                        \n --component-chart: #F0F2F2;
+                        \n --component-button: #F0F2F2;
+                        \n --component-buttonHover: #F7F7F7;
+                        \n --component-background: #F4F5F6;
+                        \n --component-topBar: #F9FAFA;
+                        \n --component-topBarMobile: #FFFFFF;
+                        \n --component-textFieldBackground: #F9FAFA;
+                        \n --component-tradingViewGrid: #F9FAFA;
+                        \n --component-card: #FFFFFF;
+                        \n --component-input: #F9FAFA;
+                        \n --component-swapBox: #F4F5F6;
+                        \n --component-backgroundMarket: #FFFFFF;
+                        \n --component-backgroundTrade: #FFFFFF;
+                        \n --component-buttonDisabled: #E0E4E6;
+                        \n --component-buttonDisabledContrast: #E0E4E6;
+                        \n --component-assetItem-highlight: rgba(232, 101, 46, 0.06);
+                        \n --component-assetItem-hover: rgba(232, 101, 46, 0.13);
+                        \n --component-assetItem-hover: rgba(232, 101, 46, 0.13);
+                        \n --component-assetItemSolid-hover: #fdebe5;
+                        \n --component-select-background: #FFFFFF;
+                        \n --component-select-hoverBackground: #F9FAFA;
+                        \n --component-textField-borderLine: #E0E4E6;
+                        \n --component-textField-hoverBorderLine: #B5BDC1;
+                        \n --component-shadow: rgba(224, 228, 230, 0.9);
+                        \n --component-antdTooltipShadow: 0px 0px 32px rgba(212, 212, 212, 0.75);
+                        \n --gradient-primary: linear-gradient(263.72deg, #FFBD14 -10.41%, #E86730 30.52%, #DB4D99 108.2%);
+                        \n --gradient-secondary: linear-gradient(118.37deg, #2EEDE0 -2.17%, #F147A3 30.04%, #F05A2A 72.88%, #F9C72D 89.93%);
+                        \n --gradient-tertiary: linear-gradient(263.72deg, rgba(255, 189, 20, 0.05) -10.41%, rgba(232, 103, 48, 0.05) 30.52%, rgba(219, 77, 153, 0.05) 108.2%);
+                        \n --image-gradient-button-primary-hover: linear-gradient(264.97deg, #FFBD14 -32.24%, #E86730 68.87%, #DB4D99 140.17%);
+                        \n --component-buttonShadow-primary: rgba(145, 74, 243, 0.85);
+                        \n --component-buttonHover-primary: #f07642;
+                        \n --component-buttonHoverShadow-primary: rgba(232, 101, 46, 0.85);
+                        \n --component-buttonHoverShadow-secondary: rgba(232, 101, 46, 0.85);
+                        \n --component-label-stable-coin: #53CDD4;
+                        \n --component-swapBoxInput-hover: #F4F5F6;
+                        \n --component-marketFilterTab-background: #F8F8F8;
+                        \n --component-marketFilterTab-hover: #EAE9E9;
+                        \n --component-marketFilterItem-background: #F8F8F8;
+                        \n --component-marketFilterItem-hover: #EAE9E9;
+                        \n --component-boxShadow: rgb(0 0 0 / 20%) 0px 4px 8px;
+                        \n --earn-button-border: #EAEEF0;
+                        \n --earn-button-background: #FFFFFF;
+                        \n --earn-button-hoverBackground: #FFFFFF;
+                        \n --earn-button-hoverBorder: #EAEEF0;
+                        \n --earn-button-text: #282F36;
+                        \n
+                    }
+
+                    \n .force-dark-theme {
+                        \n --accent-primary: #E8652E;
+                        \n --accent-red: #D43955;
+                        \n --accent-green: #1E9D70;
+                        \n --accent-blue: #48C1C8;
+                        \n --accent-fadeBlue: #10393B;
+                        \n --accent-yellow: #F8BA2A;
+                        \n --accent-orange: #E8652E;
+                        \n --accent-danger: #E43C46;
+                        \n --accent-fadeOrange: #422A21;
+                        \n --accent-fadeOrangeSecondary: #58382C;
+                        \n --accent-fadeRed: #3C0F17;
+                        \n --accent-fadeYellow: #3C2F11;
+                        \n --accent-dimmedOrange: #BF5428;
+                        \n --typography-solid: #FFFFFF;
+                        \n --typography-title: #F0F2F2;
+                        \n --typography-body: #E0E4E6;
+                        \n --typography-description: #7E8991;
+                        \n --typography-disable: #4D5866;
+                        \n --typography-theme: #0D1112;
+                        \n --typography-textWhiteDisable: #6B777F;
+                        \n --typography-label-stable-coin: #53CDD4;
+                        \n --component-borderLine: #39434C;
+                        \n --component-horizontalLine: #322723;
+                        \n --component-tableLine: #39434C;
+                        \n --component-graphLine: #39434C;
+                        \n --component-tooltip: #39434C;
+                        \n --component-tooltip-shadow: rgba(0, 0, 0, 0.75);
+                        \n --component-chart: #39434C;
+                        \n --component-button: #39434C;
+                        \n --component-buttonHover: #293237;
+                        \n --component-background: #0D1112;
+                        \n --component-topBar: #161B1D;
+                        \n --component-topBarMobile: #0D1112;
+                        \n --component-textFieldBackground: #161B1D;
+                        \n --component-tradingViewGrid: #161B1D;
+                        \n --component-card: #21282C;
+                        \n --component-input: #39434C;
+                        \n --component-swapBox: #21282C;
+                        \n --component-backgroundMarket: #161B1D;
+                        \n --component-backgroundTrade: #161B1D;
+                        \n --component-buttonDisabled: #39434C;
+                        \n --component-buttonDisabledContrast: #293237;
+                        \n --component-assetItem-highlight: rgba(232, 101, 46, 0.06);
+                        \n --component-assetItem-hover: rgba(232, 101, 46, 0.13);
+                        \n --component-assetItem-hover: rgba(232, 101, 46, 0.13);
+                        \n --component-assetItemSolid-hover: #322520;
+                        \n --component-select-background: #21282C;
+                        \n --component-select-hoverBackground: #39434C;
+                        \n --component-textField-borderLine: #4D5866;
+                        \n --component-textField-hoverBorderLine: #7E8991;
+                        \n --component-shadow: rgb(0 0 0 / 20%);
+                        \n --component-antdTooltipShadow: 0px 0px 32px rgba(212, 212, 212, 0.75);
+                        \n --gradient-primary: linear-gradient(94.8deg, #F4C14B -4.53%, #F1642D 50.67%, #F16237 108.21%);
+                        \n --gradient-secondary: linear-gradient(94.8deg, #F4C14B -4.53%, #F1642D 50.67%, #F147A1 108.21%);
+                        \n --gradient-tertiary: linear-gradient(263.72deg, rgba(255, 189, 20, 0.05) -10.41%, rgba(232, 103, 48, 0.05) 30.52%, rgba(219, 77, 153, 0.05) 108.2%);
+                        \n --image-gradient-button-primary-hover: linear-gradient(92.14deg, #F4C14B -5.61%, #F1642D 104.62%, #F16237 182.72%);
+                        \n --component-buttonShadow-primary: rgba(145, 74, 243, 0.85);
+                        \n --component-buttonHover-primary: #f07642;
+                        \n --component-buttonHoverShadow-primary: rgba(232, 101, 46, 0.85);
+                        \n --component-buttonHoverShadow-secondary: rgba(232, 101, 46, 0.85);
+                        \n --component-label-stable-coin: #12393B;
+                        \n --component-swapBoxInput-hover: #0D1012;
+                        \n --component-marketFilterTab-background: #22282C;
+                        \n --component-marketFilterTab-hover: #1D2326;
+                        \n --component-marketFilterItem-background: #3B434B;
+                        \n --component-marketFilterItem-hover: #2D333A;
+                        \n --component-boxShadow: 0px 0px 32px rgba(0, 0, 0, 0.55);
+                        \n --earn-button-border: #252C32;
+                        \n --earn-button-background: rgba(0, 0, 0, 0.4);
+                        \n --earn-button-hoverBackground: rgba(0, 0, 0, 0.4);
+                        \n --earn-button-hoverBorder: #252C32;
+                        \n --earn-button-text: #EDEFF2;
+                        \n
+                    }
+
+                    \n
+                </style>
+                <div class="relative flex w-full">
+                    <div class="relative w-full">
+                        <div class="flex justify-between items-center w-full border-b-[1px] border-solid border-transparent z-[20] h-[56px] transition-all duration-[200]"
+                            style="background-image: linear-gradient(var(--component-tradingViewGrid), var(--component-tradingViewGrid)), linear-gradient(to right, #F9C72D, #F05A2A, #F1573F, #F147A3, #2EEDE0); background-origin: border-box; background-clip: content-box, border-box;">
+                            <div class="flex items-center w-full h-full px-12 sm:px-24">
+                                <div class="flex items-center justify-start w-full h-full">
+                                    <div>
+                                        <div class="css-nivc7w e1dej11h0"><a aria-label="Safefi"
+                                                class="css-x2nrcc e171lmbd2"
+                                                href="/simple-mode/swap/ethereum/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"><img
+                                                    src="/images/arken-logo.png" alt="logo"
+                                                    class="css-yct5co e171lmbd0"></a></div>
+                                    </div>
+                                </div>
+                                <div style="display: flex;">
+                                    <div data-testid="connect-wallet-button" class="leading-none css-6h7pxf ewfwfgj0"
+                                        type="primary"><svg viewBox="0 0 16 17"
+                                            class="mr-[7px] ed6vq1w0 css-1dpymm0 e1xiprzw0" color="text" width="20px"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.6667 8.05469H12.0001V10.7214H10.6667V8.05469Z" fill="white">
+                                            </path>
+                                            <path
+                                                d="M13.3333 4.72135V3.38802C13.3333 2.65269 12.7353 2.05469 11.9999 2.05469H3.33325C2.23059 2.05469 1.33325 2.95202 1.33325 4.05469V12.0547C1.33325 13.522 2.52925 14.0547 3.33325 14.0547H13.3333C14.0686 14.0547 14.6666 13.4567 14.6666 12.7214V6.05469C14.6666 5.31935 14.0686 4.72135 13.3333 4.72135ZM3.33325 3.38802H11.9999V4.72135H3.33325C3.1616 4.71368 2.99952 4.64008 2.88077 4.5159C2.76202 4.39172 2.69574 4.22651 2.69574 4.05469C2.69574 3.88286 2.76202 3.71766 2.88077 3.59348C2.99952 3.46929 3.1616 3.3957 3.33325 3.38802ZM13.3333 12.7214H3.34125C3.03325 12.7134 2.66659 12.5914 2.66659 12.0547V5.93135C2.87592 6.00669 3.09792 6.05469 3.33325 6.05469H13.3333V12.7214Z"
+                                                fill="white"></path>
+                                        </svg>Connect wallet</div>
+                                    <div class="css-nivc7w e1dej11h0" style="gap: 16px;">
+                                        <div class="ml-[16px]"><span data-testid="notification-icon"
+                                                class="ant-dropdown-trigger css-1nraet e1llnr6n1"><svg width="24"
+                                                    height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" class="css-1jgj5du e1xiprzw0"
+                                                    color="text">
+                                                    <path
+                                                        d="M21.5303 14.4697L19.5 12.4395V9.75C19.4977 7.89138 18.8063 6.09964 17.5595 4.72124C16.3127 3.34284 14.5991 2.4757 12.75 2.2875V0.75H11.25V2.2875C9.40093 2.4757 7.68732 3.34284 6.44053 4.72124C5.19373 6.09964 4.50233 7.89138 4.5 9.75V12.4395L2.46975 14.4697C2.32909 14.6104 2.25004 14.8011 2.25 15V17.25C2.25 17.4489 2.32902 17.6397 2.46967 17.7803C2.61032 17.921 2.80109 18 3 18H8.25V18.5828C8.23369 19.5342 8.56905 20.4583 9.19184 21.1778C9.81462 21.8973 10.681 22.3617 11.625 22.482C12.1464 22.5337 12.6728 22.4757 13.1704 22.3117C13.6681 22.1478 14.1259 21.8815 14.5144 21.53C14.9029 21.1785 15.2136 20.7495 15.4264 20.2707C15.6392 19.792 15.7494 19.2739 15.75 18.75V18H21C21.1989 18 21.3897 17.921 21.5303 17.7803C21.671 17.6397 21.75 17.4489 21.75 17.25V15C21.75 14.8011 21.6709 14.6104 21.5303 14.4697ZM14.25 18.75C14.25 19.3467 14.0129 19.919 13.591 20.341C13.169 20.7629 12.5967 21 12 21C11.4033 21 10.831 20.7629 10.409 20.341C9.98705 19.919 9.75 19.3467 9.75 18.75V18H14.25V18.75ZM20.25 16.5H3.75V15.3105L5.78025 13.2803C5.92091 13.1396 5.99996 12.9489 6 12.75V9.75C6 8.1587 6.63214 6.63258 7.75736 5.50736C8.88258 4.38214 10.4087 3.75 12 3.75C13.5913 3.75 15.1174 4.38214 16.2426 5.50736C17.3679 6.63258 18 8.1587 18 9.75V12.75C18 12.9489 18.0791 13.1396 18.2197 13.2803L20.25 15.3105V16.5Z">
+                                                    </path>
+                                                </svg>
+                                                <div class="css-r9wlvk"></div>
+                                            </span></div>
+                                        <div class="h-[22px] border-l-[1px] border-solid border-component-borderLine">
+                                        </div><svg viewBox="0 0 16 16"
+                                            class="ant-dropdown-trigger cursor-pointer css-lfp2qz e1xiprzw0"
+                                            width="24px" height="24px" fill="var(--typography-title)"
+                                            data-testid="setting-icon" color="text" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.213 14.667H6.787a.667.667 0 01-.652-.524l-.271-1.256a5.335 5.335 0 01-1.023-.592l-1.225.39a.667.667 0 01-.78-.302l-1.216-2.1a.67.67 0 01.129-.826l.95-.867a5.4 5.4 0 010-1.181l-.95-.865a.67.67 0 01-.129-.827l1.213-2.102a.667.667 0 01.78-.302l1.225.39c.163-.12.332-.232.507-.333.168-.095.342-.18.519-.257l.272-1.255a.667.667 0 01.65-.525h2.427a.667.667 0 01.651.525l.275 1.255c.361.159.704.357 1.022.592l1.226-.39a.667.667 0 01.779.302l1.213 2.102a.671.671 0 01-.128.826l-.95.866a5.4 5.4 0 010 1.182l.95.866c.23.212.283.555.128.826l-1.213 2.102a.667.667 0 01-.78.302l-1.225-.39a5.325 5.325 0 01-1.022.59l-.275 1.254a.666.666 0 01-.65.524zM5.08 10.819l.547.4a4.128 4.128 0 00.77.447l.622.273.305 1.394h1.353l.305-1.394.622-.273c.271-.12.53-.269.769-.444l.546-.4 1.362.433.676-1.172-1.055-.962.075-.674a3.96 3.96 0 000-.888l-.075-.675 1.056-.964-.677-1.173-1.361.434-.547-.4a4.152 4.152 0 00-.769-.448l-.622-.272-.305-1.394H7.324L7.017 4.06l-.62.272c-.272.12-.53.268-.768.444l-.548.4-1.36-.433-.678 1.176 1.056.96-.075.676a3.956 3.956 0 000 .888l.075.675-1.056.962.677 1.172 1.36-.434zm2.917-.152a2.667 2.667 0 110-5.334 2.667 2.667 0 010 5.334zm0-4A1.333 1.333 0 109.331 8.06v.267V8a1.333 1.333 0 00-1.334-1.333z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full max-w-full mt-0 grow">
+                            <div class="w-ful h-full">
+                                <div id="animation-container"
+                                    style="position: fixed; left: 0px; top: 0px; bottom: 0px; width: 100%; overflow: hidden; background-color: rgb(13, 17, 18);">
+                                    <div direction="column" class="css-1ib4agv e1dej11h0"
+                                        style="position: absolute; inset: 0px; overflow: scroll;"><a target="_blank"
+                                            class="w-full h-[93px] bg-black" href="https://app.arken.finance/stake">
+                                            <div class="relative flex w-full h-full"><img
+                                                    class="absolute top-[0px] right-[0px] z-[0] w-full h-full"
+                                                    src="/images/ve-arken-banner/bg-mobile-v2.png">
+                                                <div class="absolute top-[6px] right-[6px] z-[50]">
+                                                    <div class="iconWrapper cursor-pointer"
+                                                        style="--iconSize: 20px; --fillColor: #7E8991;"><svg
+                                                            class="cursor-pointer" width="20" height="20"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                            <path
+                                                                d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.10997 5.69997C6.71997 5.30997 6.08997 5.30997 5.69997 5.69997C5.30997 6.08997 5.30997 6.71997 5.69997 7.10997L10.59 12L5.69997 16.89C5.30997 17.28 5.30997 17.91 5.69997 18.3C6.08997 18.69 6.71997 18.69 7.10997 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z">
+                                                            </path>
+                                                        </svg></div>
+                                                </div>
+                                                <div class="z-[1] pl-12 py-12">
+                                                    <div
+                                                        class="text-white font-extrabold text-[14px] mb-[8px] leading-[18px] flex items-center gap-x-4 w-max">
+                                                        <span>Stake veARKEN, Earn</span><img
+                                                            src="/images/coins/usdc.png" alt="token"
+                                                            class="w-[16px] h-[16px]"><span>USDC</span>
+                                                        <div class="ml-4 flex items-center gap-x-[3px]">
+                                                            <div
+                                                                class="text-accent-primary text-12 font-bold underline hover:text-accent-primary hover:underline">
+                                                                Go stake</div>
+                                                            <div class="iconWrapper cursor-pointer"
+                                                                style="--iconSize: 10px; --fillColor: #E8652E;"><svg
+                                                                    class="cursor-pointer" width="10" height="10"
+                                                                    viewBox="64 64 896 896"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z">
+                                                                    </path>
+                                                                </svg></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center gap-x-12"><span
+                                                            class="font-extrabold text-[#FAFAFA] text-32 md:text-28">APY</span>
+                                                        <div
+                                                            class="h-[42px] w-max px-12 md:h-[49px] flex justify-center items-center overflow-hidden _border-rainbow_swthf_11">
+                                                            <p
+                                                                class="font-extrabold text-[#FAFAFA] text-32 md:text-28 whitespace-nowrap">
+                                                                48%</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="css-18y1qk1 e75vy2f0"
+                                            style="width: 100%; height: 100%; position: relative; flex: 1 1 0%; margin-bottom: 36px;">
+                                            <div
+                                                class="flex flex-col justify-start h-full p-12 bg-component-tradingViewGrid custom-dark-card">
+                                                <div class="ant-tabs ant-tabs-top">
+                                                    <div role="tablist" class="ant-tabs-nav">
+                                                        <div class="ant-tabs-nav-wrap ant-tabs-nav-wrap-ping-right">
+                                                            <div class="ant-tabs-nav-list"
+                                                                style="transform: translate(0px, 0px);">
+                                                                <div class="ant-tabs-tab ant-tabs-tab-active">
+                                                                    <div role="tab" aria-selected="true"
+                                                                        class="ant-tabs-tab-btn" tabindex="0"
+                                                                        id="rc-tabs-0-tab-chart-view"
+                                                                        aria-controls="rc-tabs-0-panel-chart-view">Chart
+                                                                        View</div>
+                                                                </div>
+                                                                <div class="ant-tabs-tab">
+                                                                    <div role="tab" aria-selected="false"
+                                                                        class="ant-tabs-tab-btn" tabindex="0"
+                                                                        id="rc-tabs-0-tab-market-trade"
+                                                                        aria-controls="rc-tabs-0-panel-market-trade">
+                                                                        Market Trade</div>
+                                                                </div>
+                                                                <div class="ant-tabs-tab">
+                                                                    <div role="tab" aria-selected="false"
+                                                                        class="ant-tabs-tab-btn" tabindex="0"
+                                                                        id="rc-tabs-0-tab-liquidity-info"
+                                                                        aria-controls="rc-tabs-0-panel-liquidity-info">
+                                                                        Liquidity Info</div>
+                                                                </div>
+                                                                <div class="ant-tabs-tab">
+                                                                    <div role="tab" aria-selected="false"
+                                                                        class="ant-tabs-tab-btn" tabindex="0"
+                                                                        id="rc-tabs-0-tab-price-alert"
+                                                                        aria-controls="rc-tabs-0-panel-price-alert">
+                                                                        Price Alert</div>
+                                                                </div>
+                                                                <div class="ant-tabs-tab">
+                                                                    <div role="tab" aria-selected="false"
+                                                                        class="ant-tabs-tab-btn" tabindex="0"
+                                                                        id="rc-tabs-0-tab-all-order"
+                                                                        aria-controls="rc-tabs-0-panel-all-order">
+                                                                        <div>All Order</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ant-tabs-tab">
+                                                                    <div role="tab" aria-selected="false"
+                                                                        class="ant-tabs-tab-btn" tabindex="0"
+                                                                        id="rc-tabs-0-tab-limit-legacy"
+                                                                        aria-controls="rc-tabs-0-panel-limit-legacy">
+                                                                        <div>Limit Order (Legacy)</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ant-tabs-tab">
+                                                                    <div role="tab" aria-selected="false"
+                                                                        class="ant-tabs-tab-btn" tabindex="0"
+                                                                        id="rc-tabs-0-tab-swap-history"
+                                                                        aria-controls="rc-tabs-0-panel-swap-history">
+                                                                        Swap History</div>
+                                                                </div>
+                                                                <div class="ant-tabs-ink-bar ant-tabs-ink-bar-animated"
+                                                                    style="left: 12px; width: 76px;"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="ant-tabs-nav-operations ant-tabs-nav-operations-hidden">
+                                                            <button type="button" class="ant-tabs-nav-more"
+                                                                tabindex="-1" aria-hidden="true" aria-haspopup="listbox"
+                                                                aria-controls="rc-tabs-0-more-popup" id="rc-tabs-0-more"
+                                                                aria-expanded="false"
+                                                                style="visibility: hidden; order: 1;">
+                                                                <div
+                                                                    class="h-[20px] flex items-center justify-center text-typography-description">
+                                                                    <div class="iconWrapper"
+                                                                        style="--iconSize: 18px; --fillColor: #F0F2F2;">
+                                                                        <svg width="18px" height="18px"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            viewBox="0 0 24 24">
+                                                                            <path
+                                                                                d="M4 13C4.55228 13 5 12.5523 5 12C5 11.4477 4.55228 11 4 11C3.44772 11 3 11.4477 3 12C3 12.5523 3.44772 13 4 13Z"
+                                                                                stroke="#405163" stroke-width="2">
+                                                                            </path>
+                                                                            <path
+                                                                                d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                                                                                stroke="#405163" stroke-width="2">
+                                                                            </path>
+                                                                            <path
+                                                                                d="M20 13C20.5523 13 21 12.5523 21 12C21 11.4477 20.5523 11 20 11C19.4477 11 19 11.4477 19 12C19 12.5523 19.4477 13 20 13Z"
+                                                                                stroke="#405163" stroke-width="2">
+                                                                            </path>
+                                                                        </svg></div>
+                                                                </div>
+                                                            </button></div>
+                                                    </div>
+                                                    <div class="ant-tabs-content-holder">
+                                                        <div class="ant-tabs-content ant-tabs-content-top">
+                                                            <div role="tabpanel" tabindex="0" aria-hidden="false"
+                                                                class="ant-tabs-tabpane ant-tabs-tabpane-active"
+                                                                id="rc-tabs-0-panel-chart-view"
+                                                                aria-labelledby="rc-tabs-0-tab-chart-view">
+                                                                <div class="css-1koz4f3 e17te42g8">
+                                                                    <div id="tradingview" class="css-1uq6vvf emsuf3l0">
+                                                                        <iframe id="tradingview_910ba"
+                                                                            name="tradingview_910ba"
+                                                                            src="/charting_library/en-tv-chart.b555c6a4.html#symbol=bsc_0x768a62a22b187eb350637e720ebc552d905c0331&amp;interval=15&amp;toolbarbg=161B1D&amp;widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&amp;timeFrames=%5B%7B%22text%22%3A%221y%22%2C%22resolution%22%3A%221W%22%2C%22description%22%3A%223%20Months%22%7D%2C%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%22720%22%2C%22description%22%3A%221%20Month%22%7D%2C%7B%22text%22%3A%221w%22%2C%22resolution%22%3A%22240%22%2C%22description%22%3A%227%20Days%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%2230%22%2C%22description%22%3A%221%20Day%22%7D%5D&amp;locale=en&amp;uid=tradingview_910ba&amp;clientId=0&amp;userId=0&amp;chartsStorageVer=1.0&amp;customCSS=css%2Fdark-theme-trading-view.css&amp;autoSaveDelay=1&amp;debug=false&amp;timezone=Asia%2FHong_Kong&amp;theme=Dark"
+                                                                            width="800" height="500" frameborder="0"
+                                                                            allowtransparency="true" scrolling="no"
+                                                                            allowfullscreen=""
+                                                                            style="display:block;"></iframe></div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="tabpanel" tabindex="-1" aria-hidden="true"
+                                                                class="ant-tabs-tabpane" style="display: none;"
+                                                                id="rc-tabs-0-panel-market-trade"
+                                                                aria-labelledby="rc-tabs-0-tab-market-trade"></div>
+                                                            <div role="tabpanel" tabindex="-1" aria-hidden="true"
+                                                                class="ant-tabs-tabpane" style="display: none;"
+                                                                id="rc-tabs-0-panel-liquidity-info"
+                                                                aria-labelledby="rc-tabs-0-tab-liquidity-info"></div>
+                                                            <div role="tabpanel" tabindex="-1" aria-hidden="true"
+                                                                class="ant-tabs-tabpane" style="display: none;"
+                                                                id="rc-tabs-0-panel-price-alert"
+                                                                aria-labelledby="rc-tabs-0-tab-price-alert"></div>
+                                                            <div role="tabpanel" tabindex="-1" aria-hidden="true"
+                                                                class="ant-tabs-tabpane" style="display: none;"
+                                                                id="rc-tabs-0-panel-all-order"
+                                                                aria-labelledby="rc-tabs-0-tab-all-order"></div>
+                                                            <div role="tabpanel" tabindex="-1" aria-hidden="true"
+                                                                class="ant-tabs-tabpane" style="display: none;"
+                                                                id="rc-tabs-0-panel-limit-legacy"
+                                                                aria-labelledby="rc-tabs-0-tab-limit-legacy"></div>
+                                                            <div role="tabpanel" tabindex="-1" aria-hidden="true"
+                                                                class="ant-tabs-tabpane" style="display: none;"
+                                                                id="rc-tabs-0-panel-swap-history"
+                                                                aria-labelledby="rc-tabs-0-tab-swap-history"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="css-z00z2l e42vl5s0">
+                                            <div width="100%" class="css-1lnkcrt e1dej11h0">
+                                                <div direction="column" width="auto" class="css-1hlbm1x e1dej11h0"><svg
+                                                        viewBox="0 0 24 24" fill="#E0E4E6" color="text" width="20px"
+                                                        xmlns="http://www.w3.org/2000/svg" class="css-wdxs7q e1xiprzw0">
+                                                        <path
+                                                            d="M19 11H7.82998L12.71 6.12C13.1 5.73 13.1 5.09 12.71 4.7C12.32 4.31 11.69 4.31 11.3 4.7L4.70998 11.29C4.31998 11.68 4.31998 12.31 4.70998 12.7L11.3 19.29C11.69 19.68 12.32 19.68 12.71 19.29C13.1 18.9 13.1 18.27 12.71 17.88L7.82998 13H19C19.55 13 20 12.55 20 12C20 11.45 19.55 11 19 11Z">
+                                                        </path>
+                                                    </svg>
+                                                    <div data-testid="back-to-market-page" color="#E0E4E6"
+                                                        class="css-163o65l e1bv4b780">Back</div>
+                                                </div>
+                                                <div data-testid="bottom-panel-buy-token-button"
+                                                    class="css-1ccypj8 ewfwfgj0" type="primary">BUY</div>
+                                                <div data-testid="bottom-panel-sell-token-button"
+                                                    class="css-a7qa40 ewfwfgj0" type="primary">SELL</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>\n \n <!-- <div id="portal-root"></div> -->\n <!-- Cloudflare Pages Analytics -->
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon="{&quot;token&quot;: &quot;a4e9e05cdcbb49489f7666ff30d18cb5&quot;}"></script>
+    <!-- Cloudflare Pages Analytics -->\n\n
+    <script type="text/javascript"
+        id="">(function(g, c) { function k(a, f) { a.prototype[f] = function () { this._q.push([f].concat(Array.prototype.slice.call(arguments, 0))); return this } } function l(a) { function f(m) { a[m] = function () { a._q.push([m].concat(Array.prototype.slice.call(arguments, 0))) } } for (var h = 0; h < n.length; h++)f(n[h]) } var d = g.amplitude || { _q: [], _iq: {} }, b = c.createElement("script"); b.type = "text/javascript"; b.integrity = "sha384-u0hlTAJ1tNefeBKwiBNwB4CkHZ1ck4ajx/pKmwWtc+IufKJiCQZ+WjJIi+7C6Ntm"; b.crossOrigin = "anonymous"; b.async = !0; b.src = "https://cdn.amplitude.com/libs/amplitude-8.1.0-min.gz.js"; \nb.onload = function () { g.amplitude.runQueuedFunctions || console.log("[Amplitude] Error: could not load SDK") }; c = c.getElementsByTagName("script")[0]; c.parentNode.insertBefore(b, c); b = function () { this._q = []; return this }; c = "add append clearAll prepend set setOnce unset preInsert postInsert remove".split(" "); for (var e = 0; e < c.length; e++)k(b, c[e]); d.Identify = b; b = function () { this._q = []; return this }; c = ["setProductId", "setQuantity", "setPrice", "setRevenueType", "setEventProperties"]; for (e = 0; e < c.length; e++)k(b, c[e]); \nd.Revenue = b; var n = "init logEvent logRevenue setUserId setUserProperties setOptOut setVersionName setDomain setDeviceId enableTracking setGlobalUserProperties identify clearUserProperties setGroup logRevenueV2 regenerateDeviceId groupIdentify onInit logEventWithTimestamp logEventWithGroups setSessionId resetSessionId".split(" "); l(d); d.getInstance = function (a) { a = (a && 0 !== a.length ? a : "$default_instance").toLowerCase(); Object.prototype.hasOwnProperty.call(d._iq, a) || (d._iq[a] = { _q: [] }, l(d._iq[a])); return d._iq[a] }; \ng.amplitude = d })(window, document); amplitude.getInstance().init("2c8436fd56ab8e8bdb80fedf8ba34985", null, { saveEvents: !0, includeUtm: !0, includeReferrer: !0 });</script>
+    \n\n
+    <script type="text/javascript"
+        id="">(function (e, c) { if (!c.__SV) { var l, h; window.mixpanel = c; c._i = []; c.init = function (q, r, f) { function t(d, a) { var g = a.split("."); 2 == g.length && (d = d[g[0]], a = g[1]); d[a] = function () { d.push([a].concat(Array.prototype.slice.call(arguments, 0))) } } var b = c; "undefined" !== typeof f ? b = c[f] = [] : f = "mixpanel"; b.people = b.people || []; b.toString = function (d) { var a = "mixpanel"; "mixpanel" !== f && (a += "." + f); d || (a += " (stub)"); return a }; b.people.toString = function () { return b.toString(1) + ".people (stub)" }; l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" "); \nfor(h = 0; h < l.length; h++)t(b, l[h]); var n = "set set_once union unset remove delete".split(" "); b.get_group = function () { function d(p) { a[p] = function () { call2_args = arguments; call2 = [p].concat(Array.prototype.slice.call(call2_args, 0)); b.push([g, call2]) } } for (var a = {}, g = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), m = 0; m < n.length; m++)d(n[m]); return a }; c._i.push([q, r, f])
+            }; c.__SV = 1.2; var k = e.createElement("script"); k.type = "text/javascript"; k.async = !0; k.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?\nnMIXPANEL_CUSTOM_LIB_URL: "file:" === e.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\\/\\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=e.getElementsByTagName("script")[0];e.parentNode.insertBefore(k,e)}})(document,window.mixpanel||[]);mixpanel.init("2b91c9b8b0855e5ff5a7c96fba9c0efc",{debug:!0});</script>
+    \n\n
+    <script type="text/javascript" id="" src="https://cdn.lr-ingest.io/LogRocket.min.js"></script>
+    <script type="text/javascript" id="" src="https://browser.sentry-cdn.com/6.4.1/bundle.tracing.min.js"></script>\n
+    <script type="text/javascript"
+        id="">!function (d, e, f, a, b, c) { d.twq || (a = d.twq = function () { a.exe ? a.exe.apply(a, arguments) : a.queue.push(arguments) }, a.version = "1.1", a.queue = [], b = e.createElement(f), b.async = !0, b.src = "//static.ads-twitter.com/uwt.js", c = e.getElementsByTagName(f)[0], c.parentNode.insertBefore(b, c)) }(window, document, "script"); twq("init","o6adm");twq("track","PageView");</script>
+    \n\n
+    <script type="text/javascript"
+        id="">!function (b, e, f, g, a, c, d) { b.fbq || (a = b.fbq = function () { a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments) }, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f), c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d)) }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js"); fbq("init", "250077106454426"); fbq("track", "PageView");</script>
+    \n<noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=250077106454426&amp;ev=PageView&amp;noscript=1"></noscript>\n
+    <script type="text/javascript"
+        id="">adroll_adv_id = "J5PHW4Z74JABLEDJO3FGX7"; adroll_pix_id = "FTWANQLBKVFEVEW6Q35ET7"; adroll_version = "2.0"; \n(function (a, e, c, d, b) { a.__adroll_loaded = !0; a.adroll = a.adroll || []; a.adroll.f = ["setProperties", "identify", "track"]; var f = "https://s.adroll.com/j/" + adroll_adv_id + "/roundtrip.js"; for (b = 0; b < a.adroll.f.length; b++)a.adroll[a.adroll.f[b]] = a.adroll[a.adroll.f[b]] || function (g) { return function () { a.adroll.push([g, arguments]) } }(a.adroll.f[b]); c = e.createElement("script"); d = e.getElementsByTagName("script")[0]; c.async = 1; c.src = f; d.parentNode.insertBefore(c, d) })(window, document); adroll.track("pageView");</script>
+    <script type="text/javascript"
+        id="">window.intercomSettings = { app_id: "tg94vkiv", hide_default_launcher: 600 > window.innerWidth || !location.hostname.includes("swap.arken.finance") };</script>
+    \n\n
+    <script type="text/javascript"
+        id="">(function () { var b = window, a = b.Intercom; if ("function" === typeof a) a("reattach_activator"), a("update", b.intercomSettings); else { var e = document, d = function () { d.c(arguments) }; d.q = []; d.c = function (c) { d.q.push(c) }; b.Intercom = d; a = function () { var c = e.createElement("script"); c.type = "text/javascript"; c.async = !0; c.src = "https://widget.intercom.io/widget/tg94vkiv"; var f = e.getElementsByTagName("script")[0]; f.parentNode.insertBefore(c, f) }; "complete" === document.readyState ? a() : b.attachEvent ? b.attachEvent("onload", a) : b.addEventListener("load", \na, !1) } })();</script>
+    <script type="text/javascript"
+        id="">(function (a, e, b, f, g, c, d) { a[b] = a[b] || function () { (a[b].q = a[b].q || []).push(arguments) }; c = e.createElement(f); c.async = 1; c.src = "https://www.clarity.ms/tag/" + g; d = e.getElementsByTagName(f)[0]; d.parentNode.insertBefore(c, d) })(window, document, "clarity", "script", "frftg6ws0r");</script>
+    <script type="text/javascript"
+        id="">var params = "{\\x22AB_SIMPLE_TRADE\\x22:\\x22simple\\x22}"; window.amplitude && amplitude.getInstance().setUserProperties(JSON.parse(params)); mixpanel && mixpanel.register(JSON.parse(params));</script>
+    <script type="text/javascript"
+        id="">var params = "{\\x22language\\x22:\\x22en\\x22}"; window.amplitude && amplitude.getInstance().setUserProperties(JSON.parse(params... 0x9CBF90AB26D70A718a17b1767bd595B53Ee09d72 0x7101A39C053954e3E7fD010fDF3F6Ef6bDBCBde0 0x16068472Cc4569a6D1834a41947f57Df618Bf1ec 0x75B7DaF9f26b70490f40397500830a50f4df655C 0xEE0db089D98DAFa516538b336184cf6B135a8Be0 0xb4d8733644ddA8A02e185f30958D0a61CC2842Ae 0xC614A4C2fe9F999F85D1C316D6AF556457db7Dc4 0xfD2BA47C308bA4dAc91957B297ae62DbcE6002De 0xA71A7b1a82D45B5cdd91AbCE64ef95FC1f727470 0xf64eDB06673EB5be70953BD1ab473b5143B08302 0x6fC340087a0E3597c2fED8f34Af07afC91A1c84E 0xD7915Ad772d73203E9e523f215507CdC58AF213b 0xCce0a627557f2b9Af402607e5342bA15AD5F0053 0x6351F94398B539Bdbb29c909C84E5c1F07837DeC 0xCfc6311963155D645aa215be71352d5ffbe9c4D6 0xbC95D6da8B318BFc64a1a8E47FD06E55441a5c0d 0xC88F425E0A8171CC4E94d7FF1EF9Acb50cCD3C07 0x80Df7A3998E38A021EEc0324479e4eAde718E35e 0x486908366ba4f642F31fbD63073437867aa7B1B7 0x9a99f0D7d736B685f7d5DC4f6bEb9Cb98291c490 0x66Efb81509F79584B59f9a377ef5Aa896E158d11 0xEc9c38f0A06ef3Ab2C549b3EB90c97e69E1E4E9F 0x8e9B19eE2eF86dafFcDbB72ADD049ed65805A6B8 0x9753192E85Dc8261475F6613937318397BbD58da 0x29500Dd4F845EA4843dF874C424ceeBfc8f3E6EA 0x48eA51763F3e752a5B1bF9bfED063d217Cb40a7B 0xC3AD117Eff68AE8678541628e99f72a7c805c4D1 0xFFd8130066ef3723E588fad3525a858724F0f965 0x8eAE7A899056f5A6C22a8590C805268b026462a7 0xBEBD9051aA63ED001e3Ce3b765FDB5dB2472023D 0x08928DCB5bD0b58F8DE51921EAaDE7Da8146d259 0x2798ba2AeC14208BF2F4eFa26bcb708330cBe0C6 0x547ce78730a66106ccABD4Fdcd91b628F534f2Ef 0x5344157bEB3c181674aD289A8d006Cbc5EEFfb1c 0x344C9FDf6A84d5c1201Ad1e277e88dF5be88BC5D 0x159A753dB06231a013Ba8404F14bf71650CE0dBD 0xFAD3160bDA3A5316fb109240C41C555a8486474f 0x32Bb74Bd4a3CE8dc75e02591e96Edb59Ce8f0DE3 0x9471f70F2518846F7a076636D64e5a22787da105 0xB488F878186035fA5a404994606c5372191B8067 0x2B31883bD2Cdd68CB2Ca29298C882E6Fb6EAc5aC 0x1f3E831F2de37D551B439BBB30A74D5c069E9dEd 0xCFfB1956cE2207300438A0d3ed0bB9320EeE7dA1 0x6fC000afc8593da33a4A3A37EEf81b9915284de9 0xbF129D53814041F13113Ae155f349C3a72087d6E 0x21A128d94784C5ADAb34016e6C989457b4cBb033 0x16C8a0D1F43F486B530059Cbac21d952C90929f1 0xFc07c0995f4A62dB2dE92981e23cFbce7ddE54b3 0x520768717F317893E749b363399f51Bc8A092Cfc 0xB2D90C925Dc2A8BAbff17428F64d6937D45F5a91 0x05E9A874D63e84F44B3fad12a7Ec3e370B1D4138 0xFD6e4064EF793DB75ce117bBEF4b3DEb7Ff17c36 0xA9EeB8243536A238180EC988Ee0399922834D384 0x62A3Af6Dc474eB2BfBaA7160BA02a07Fe57b8705 0x8afb2956032831D83D755419eC2911ED11dd52Fb 0x732485283F0Ae1B9463AaE066AD8F0E188141c27 0xBd1691E270485D152eb2F9f75B7c8ff4595eeC2F 0xD50a88b5cC9D2939d83714cdC333d858E37e7a38 0x0aBbDA1DC11D99cA868878ca050Da6036e216577 0x8FD9771f0Bb89C4b3a8040F1a483cC14E57158b3 0xF1387fe6c0D8E0C5d5fF39764e0E49e51dbf25E6 0xF6fB8D57aE8e56DC97E807a4Aea0CCeC6e36581C 0xeaA5cf63eC5B53F126E5CA683f6019a767DFE401 0xA9311b623C2b72F77ADBbd091C70F60d8CC2d2FB 0xd3359812cc8aaE8a221233Dc332c720ceAf1Ed70 0x01463F9A84894592EB0564b1FEe9b990AAd0bA37 0x537532fEBF45697aD9eFe38E791bc18CFDBfA475 0x073FcA0d123E0bE1419191BfBE5a916C3aE801a2 0xcb76d5Ee12E448Eb5f4731C243FC8198e2524e04 0x7C3CcA9C694275a87AB791D645d1B2ded6B376a9 0x3f3B55e955a54D05c7D75B0FEEA64B6FFe4A38b4 0xFA0c1338c1fea25987B375C2464347BC2276A627 0x3311069B86554AaAf6cDf835b481f0aDF774a6F4 0xd8aC3152aefc1031399464dF33FB942695d279D6 0x96Fe09ADc32c53d251Bb0D326462db3426a0Ba6c 0xEd98654c451060bA6132694Ef119e6a3489cC4e4 0x69388c330EbC7CBdA580BaD10f930E0342aa5D7F 0x88fAdAEAe0946EB3Caf17D5C3f4CbA863a05F7b3 0xbE681d305f9AC149eAA565bebb4A125eeB06D7A0 0xC8d90244f4726938449C6F2c9D27e5e7724677eA 0xd8FF36BD818BcAE0278F0904D527206363795082 0x5Fa6B94256251EB96aFe69774D3Fc658f9e6AdE0 0x3d7AC33375B66796CEFF9C5B2335fC7bafCcB23a 0x047C4d7Af709ae19D3BBbD5F9E10461d2554dA00 0xc8E6c8e1ba2f0e65694D0bE11bD7c6Ed15Df1Bc2 0x3E6cE8F922512551527D6670D6D41861b5128c22 0x5B0C648Eb43C0b225D9B3D6bf18B80433B98D8e4 0x526B7a7CA4077237511fe4419908f4D09F8673fF 0x8eB0b22D4F359c06d665d83A0b6e0ee444e4854a 0x7D92F2aADa88604b43f056064a11ac54260918Ad 0x042AFd60a339D67FEADdcc4616A80885d523a3c4 0x339CCFdEF6B16a80D194C0e05B4Fcac308b04Bd1 0xA584703F87b5Ba2E0C0f38BFeB344E8233E9b811 0x2c5fa38385ab9B27372035F263867Aa03aecA8dd 0x33290b5eA81CDf86dC2676b1A28Ff0326c513816 0x312596021c7db8D3895297218C622eA22F043A60 0xB2919623FBAe6DA57e0bE4D328fa96616831504e 0x2DB5B9974B18a66A28Bd8Ba775e98A820d0C909f 0x9f3e6825D3677F0228153f01dA1DA9f9a856d688 0x61BCBaF568F0160625ab936C4623562826F2E4b9 0xB68b2A588E6752F98d7DD4F83022BA9A7654Cea9 0x540DE94F1DAc48f3FEcC4061D93B60b17a642E38 0x7E56a92f02450cFCE57739c7f20F097DFF576d59 0xe75f91Adc498767d9A9Ea4deb1Ee39dF01368A9B 0xb902f2041a1330DA4CcC2BEc1696846B429Ad2B1 0xa2956Ce889De709D8DAA49BAc17FBF53BD962721 0x4620957BF6ACfFce133f7488742fa65540a6A538 0x37a37c171D164766E90b392B1B214f7945AB51F4 0xd7b20F4D880F384cEe28b12d34b663193C4Db237 0x3cC82f15276b9E3262f347c285e16360134652F8 0x0A4D3Db1658FB5319FcD8C2A071cD731Bd441833 0x832c69772b3d1587cd2A5d384C39084EbbDFe145 0x46af3eAE703725ff5e990D84582C96cE07d7b19C 0x7F71Cf07E9cf7EEC02b2610691Af34FD7584dBE7 0xeADb09e799178D4E39a8D99B57089D4bD68Ff1Bc 0xd65c683660c66485F533bD2B41B795990F379951 0x9EE558d05fA78F1f982d47eD68b1151c8e8c7111 0xFB7aE55D834D1b1BEcCaB60Ef2B7Ea584DFc4549 0x80c60c7fcd2306082C41788426d2A28b300CDb1D 0x71D5daa6A7Dc1b94918c8768749b5F9982200660 0xB419E98101A38806a802b4484f04001809555a87 0x74615E143FC4e438E07d1CEa06b6b516F6946b4a 0x873ef4ba1F95815511C39cFDc67B57267F773383 0x4E2A7d0e465D8d38aA5A1852D438e60b5832C1b4 0x649E136Ba00fae7eadD3b0310B2Bd66036249f97 0xCb5FF0dBCb069555B656c8E043cAa09091Ffa636 0xFB4e38fc1777B4D825b472e0465ea9D944A301Dd 0xA1D4ad17164514a3eE3C563A94D6f060f30D789C 0xc70C8952b24ed9E984b426f62f9A0AE291e1BC4C 0x09E24a89457B737D96008aCf584A441769647974 0xd33C6e993BA380B6a17a6D18Fe0E25bf794DE829 0xbaE2a0FD3fCFdDC96dFbbF990Fc9e055d70d3Bda 0xDda42f2e502DC3330799353aab691d6579BCf54f 0x11C49B061DF0efA8E2AdDdE0Dbe8dE43BF55A05d 0x171dBb5A8Ff6520aBE4Cd2707e001387b0122323 0xcFe0B919c10b1ABaF68E2b99B296939198bc0358 0xDB1626e5112f51bD1975B54a6624cCb90a448Bf3 0x2820930e1f7BBf5aF46602b37941eE51a31e6CD9 0x7c287C26942ECF553e3d8d1b7c605A47EdD17c6F 0x5361F7AaE05d259Fb6a7Acb599296651c8B0D2Da 0xBB28739a8F3669e273b41C158b05e6Fdde0CE7bf 0x6F4F52F0fCcbf2f0B30481C09eFCE39C13AD934F 0xc698a5afE9f3369DE4f27a54246B43A6A1085a5d 0x983F48B8215417e9187Af8Dd052d2865D7218d33 0x491e9c863307215C6B9F5F111A07D94eE1C013f7 0xf3413dA660017Ec4d95949B437ec4871Eb770D52 0x73a54E1b681dFDBa14d74226e2c88090e4c61CA3 0x82d751c236Cb6c682A54196Ef6fc01021a101a1B 0xCc5FAC5E86402B12da840599225f01b5f274d7A3 0xd50856830479e0591DA318a1f597EdB5e2c5C640 0x761599064123Baf63413e5C7b84e25eD64531867 0xF6c280E2d549e4904e57df5ff1beB703ff7E90fE 0xD93c94d14c65b4902fd66aDbEaC4B6064e685D6e 0x1fb9580e0b19956b90351c825aE7819f1ee0257b 0x010886DCea9525F4E6FEb1A9cCEA7345E9da5C74 0x4BE1E47eDb3034Fc682E45E7CF9E2439fb3db623 0x4b1A42Aa4fB002897d020f43c66aa4934C160b9D 0x132698Fcec433EA0f1400436f380d1099691E367 0x93cB54730dF10457F1c9c6B9E3399203C08F5217 0x2819bcf874996544Ab7C553A4E9c8d6662E19005 0x0fB7338009483bbf1a90716A8B953E7783F2d507 0x35DCcdef1e1224C63FA7cB96506d0c7bfbd12755 0x64E2d71B6f2Ca828eF903B9a36787AfEE4323684 0xEE4A780dabb67e1CA2FA2a5Ae2cd12ED92BfAE61 0xc44631E74Ea08c8b93633a6Eeb161b8b8948bfeE 0x4eF91cfE3BC07c0D82BDDDf0d123F770B4cc3fA3 0x1Be57C0964e753502547b60C9d199c8d4577a7D4 0x5CbF98fCB6e4eD8b21C7d620E3B7988537ec237E 0xC4598eF6ED51f5b427d0dB19bf655906d9D79853 0xAf982BD9c4b1463f50643ED1637e23bEf7015a4a 0x2A2c9A249a53282094CbcF8979A6E37Dd05f6db0 0xe60b4B0dd532228E77a05Cb79007043768Ce6aaa 0x0E581Dd4F50108C538a45A2eF88DE23F0f42979F 0x2f28E2dEEbDDE0dEF97BD08E9FDEb037A2A3e419 0x2F237D5C7aF701d1f4a8d27c0b1aAb9F07BE895C 0x87262a93eA84d6e25d9aae7276104388Ee6f638f 0x68863699Ae0BE79DB4591F38295672D1bc6f5112 0xe059306F039dE070ad5FA22DAcf3E4F63F6AD088 0x3d8a6990A98910FE87d007C78A1d632b91dc7ca9 0xBE1a59508c67Fd199CeCAFeE90136390b0cA2f0f 0xFa0f82f943393651b8D902523E57DB1336305C41 0x987533864e4558B1200BDB6c265e8879F72BfA67 0x0362cde85D6d4c1CBfec10cD81BB86036e32c8ea 0xf39cC9F7F58f21511b89f030AC61b361f5eb6f84 0xE5172E93a0197795d7A301e0Ac9ADEcFd3B0b87D 0xeb66e72311Cc40A1aD0698ef792E7BFACD53D7b0 0x4aaC28b42d754b7418B393263933CAbFD645b14E 0x2ed99802e97Eb84809c07fa93F91bDddf27C6125 0xfe72c30c7BaacDFdC1160603b93041Cde01dd496 0x065A958B7a3C0550Ab4d15baC4037db6989f28C5 0x7c4309D2C48C67DB3A7A9152edED3D716C363121 0x5dC70586F7c063dcc07417359A01719d5dAF6D49 0x260780a421F6d680035548A82fE29F9D10ecCC17 0x024Be1c852B9ba04E5a1a51C4C7aC0b3846Ca092 0x220a6CB04d48CA2c33735E94DF78c17F8B0F7C9F 0x0E4b0e0A028D9f78E8188631949cE3d8C7622b66 0x5EB55009891c463be1579C9D1EcA12A5fd45A0d8 0xCC144b4a21042CeBfc9dCd0B2266ea099d72acA6 0x33965Aa758603BDda5DB7fA8017e09c7a55cDfD5 0x1E00764efcddDd267f48C94CC01902620cD61767 0xF48e04247e22380782eff99275562D9752016125 0x34049D65D74A43369A30e73199553fFDBF71e702 0x9b37b31B9A035ecB49423b94257DCB85a21451e0 0x7A186adDcb4EE1bE38A8444ad5308eFFb985012e 0x591F61f1a9161617117b1314108DFd52a372Cb58 0xdEd1cAD6C623739451df67ad6fB602858Fcf6b8F 0x3De044D060a5971460A757EC067E739dDAEa9328 0xE4036Aca909cD049f9A7b7333961E1C1Db7fb35C 0x5fD7D0d6b91CC4787Bcb86ca47e0Bd4ea0346d34 0xf662812e29cBD9d7192e17167a1a6612b8F263Ef 0x836fdF41c151dEb264a3cE728Df99390E68Fa71e 0xf1ca4Bf4C325C3078Ec25299601A519eBc6BEA6D 0xEBB74c0966D02E2c635f6790310264D8A711CA03 0x2aaFD3c862cc31FEC772c6ed396e54CC74cf1662 0xB44D26298fbB3079FbD0794A1d0A9BC0D3912CEA 0xAd0fc281Ac377794FA417e76D68788a56E3040f0 0x8d160063E641252F4B424A9Af89E88B24e04e444 0xae27472b347b8960509f7DA26e5bBaa8565998eC 0xe614Dd581Df333cccB950728acB2fe1bEd7F7d57 0x12D5C15f95eD866bAaffd764A4cBc86976aF8A3b 0xCBBEb016613ea78d51AD548fbA0dB50740eFD041 0xEccCF0273484e0C70Fd60c6689d764bC808E8744 0xE12F07b1AC88bdb0Db9BD8D06503eE24ddc7b666 0x3893818AAe607906F60610B3c242Bc7B2eda7393 0xf5c8128575EFA4C3D7868302C895390C9D856622 0x118D95Bd05CCEE93085b64FD60d180754B1c5576 0x41A041dEFF2e4aE2b3F8f9E20fC7bFd58DD5944a 0x6D1105BA1b4eFfB4073e99Df2c8FF17EBfFFf0a8 0x83586f97d9a83bd23e99E7195cd9BC7cE0e6D50b 0xE5c9c5bb18E70683728De290192B134B06C66444 0x7088af96592881bd647970060DD6F7E2Bd1380F4 0xbBA58B57dA6c6A89aA64Fc0D534Db505366dc5b9 0x648E14eB37Cb84347b90234Ea502cbdf511D7D97 0x85F6692501Fa899D581A20A6051d986d9eC1D170 0xA54622d5dfD2385b6564857aCD9fC7c63c377882 0x960C4CBA0a9dCBa913F52053cB487DC76C756165 0x37D27c00FF4d9B7f5DDDf877cC14E7F919A6490D 0xb840d342aE37cA65E76828cBA9075E45891f670f 0xa218d0cE0693C41a96F58667ba34f5f489E75628 0x5578b9bd0ed9B202289575F70cd0e030232e24C7 0xf6958A622Ee89f77a9BfEe71fC839D3Aa32E1250 0x408d83E8810FA00919D1A888355ec86a7417d45f 0xE392fb4cC168397e14c0bFA0EFE7362b8A81058c 0x960aA2c21D25e4C02E1306D91AeA485246f033Ea 0x7632121a36D19029D854c6FBfDD8F3d1cfd4dd1e 0xc80b458Be1B8c1f4a6B1D84266a427024f5945CD 0x0B500Fd492e794Ab3D46FEEf930Fed1F76105CdB 0xdcdF2205ACC4B672c9A103d81Bdc895dB68e3cac 0x82CF4bB0120B92285Ca805C8F78AEC43C8abcE55 0xF5c7e89021183cb51409829f07EedB855c6b83DE 0xdB987c58b587B9C3CcF029989059a197febc6E11 0xceE6663d36a541E10fBd6A69c18D27Be63b7BF88 0x3d19FF15F18f23620291d4922D2Cf572c729e1F9 0xA0b0E61E3eaFeE16B8FA30D97bC49F4151070b43 0xb16E23C4812788E6550038E9359eCdD5C9995c10 0x41ddF3F2b3dAF0C685CAee32C841558b7AA7EEFB 0x3B423163cAbdEa0c61B7fcd8Be65dEbD72b86CC5 0x8df38a84847aE5FC85529843f8b98802f596FDD5 0x000Bc1D6e8e17c21e312fA1Ff054608D99334d53 0xF3d9e0918eDC0A2aFdC0Fc4437ddf80AF53440a6 0x750936Ebc36c266644b4fbA2fC19773Df89D9E3c 0xa09C32EE9D28CBa05BD79b94E1c8aB3f26A838B3 0xaff9bB5c498AB24f23BC8CB47425E4094F815718 0x21be35586E1aBE6DC7A2513b47927DE19252f507 0x90226C4d694219e493F49fB4A092C6368cb28d32 0xCe6823Dd45142cCC27cD12332AEF36F49b9070aE 0xDAf71e30FB6aaF1aeFf5a720da05392AE3e92e7d 0x7F460A59F049FE1235175fF99159EC75a6D6A2b6 0x50bA626Cb313c27012b453983558d66012AC7338 0x19665F0AD394B187fBbE14288833107a7BD9c10a 0x25cbdFE9c94D61Fa126dA3FDf4D875F7a50b504d 0xc67632E6052947B5e26421caB1550Bb464F6a715 0xd665a27264171569378B14c8774F23E2E2612716 0x9aE6F0aa4c2135b5f43D8e1C12582A3423cBb5E9 0xe6DcA4299347bd2F56787eE3e33Db674AC04Df3C 0x826E29ad453E07CaBfF176e99CB912e58B700B25 0x22166C1D6091b0bB8eA4be64F8D7c3182e5fD68a 0x3393daEb2B65eE5Cb1d413b91f1C42ebC4B8928C 0x9E549f2C2E2A9182d18f50355819FD4eEce62a7f 0xe4C71639181380739d59CEd5e678faFF350De871 0xb07eFeD902e5B4656564e19AA5Bf6e88C8F53841 0x077e6760eeFF1Ce1906B5961e70EC1340B2275C3 0x8A31892ADd571d7236d2418F595cd5d3E9202E87 0xA17fB09FfA2fb5fA13b89cE840E53b53C5C51817 0x4c6C80Df524274E622268424Eb9316f88716F67c 0x31270214B9CeA11f1a07E3A55B4f6643A64F94ff 0xDCE3133947b666c344C49299ea4599b39eaC0A71 0x208e7aF102B19F22e30Cd44b9748526e21EDec5A 0x26380F1331E94417F8a75D3f5316F9DD07Bd1482 0x9F9EBCE72C0715CdbAD4d589986EB22F6782A1CE 0xeBbe4586fF2b4565cB63732586bEbf81eCEF6918 0xb2B0829605Fb2D78d631F96919fD24437396E760 0xE738A7c375b981022ABF457A7F31332596F1b570 0xB1d8838BA8ca5996Fb1fa3501D557C8a1ef49197 0xEFcc44A18811B73065e878921e1a774761215F41 0xC05A91F7733D8fdAa4b4B918e1c784Fc1997246E 0x8Ff846049066443Db5c238490099b6E7889aF791 0xF68cCa2ACb3C59371c28db60C6Cec55119d03C34 0x421BAa8cA5A7E3bb4fB1963bdfdD8CD3f6fDcb69 0x0a14F771c714A47b75546550C4C83b8b36d2Db40 0xFD90a9FBe5D1E896B93938B45885F5579ce0d1c1".split(" ").includes(a)&&\n(window.LogRocket.init("uenndu / moby"),window.LogRocket.identify(a,{segment:"data_driven_1000"}),hj("trigger","data_driven_1000"));"0x238Bcb446d0f30aE586C17899aa83C3BB3bBF943 0x611738B1B8531d1f807e3707DA42B449671Fc30A 0xaC110BD262f819CDe50604D67e6D9CC1F473c3ea 0x8A63F40C5a2411FDC5D79d82eDB9b3143aA1e14e 0x8696aF03ED690a45Cdff7267013484B2C76A38Da 0x351a6b44ac100fad59182778492bE6A430b35987 0x10a58758dE6259b85611a8470E7a8255e7768870 0xBD76E14e2650fbc3a8eC87eD469A10CF3d6A33EB 0x67CFc0E8BeB1857f662E79881F9971C5Ad6a7B04 0xfB2523b72F0B7778e5A51f6FAB89634A3d2EB6C8 0x8C02b606dfe10f2d8566a1876db9f92C7C25e234 0x09609fCE44Bd1811de387C0E8F16e161AAadCFEe 0x6BCd0288A4856C812cA42C3cDB216E5529B29722 0x9FdDA8B68aAA94bF856121A6B5036945C2A785f2 0xd5EE8c485c961eb58B982E25Ca571188F10fb87e 0xaFa28b2929ccFa12Fab9d329B79CE4aCb4F404A5 0x512e101CA2387FecdF117C7a0F99d0126eE0808a 0x5bfFb55Def303c28dDd6f21E59DA23B881B0DaE1 0x4ac157343dd790201540720597bf4f49F5f778fb".split(" ").includes(a)&&\n(window.LogRocket.init("uenndu / moby"),window.LogRocket.identify(a));if("0x989ac26098C78d0b7b69C73565b89eECA72F64CC 0x7Bb8DD5f8F8A066872F2a9C47Ab17221EA0914a6 0x351a6b44ac100fad59182778492bE6A430b35987 0xDBC7cF739110eB265BF3a61f0E28a88F77314533 0x7b6E4C6DB83eDbaDE4e67Cd31b976146BB8F0E7B 0x944f6C96f45F939D1aE129a9d6669cd9109CC7D5 0x66415206D6336ABF88ceF72Ed0FdaAF08b16F815 0xcB1A461bA242B2dA4d0246B6b66A57d49c7C9D68 0x21123105aa234401ca66CEDB85cDDBC430eAaE5c 0x72761E272902956Ec17F3Ab445e526336F88DD2E 0xb2C7f3a83E7d07aAA2289C82CA7e0EA31941333C 0x5642c605EE4240392a007407f4B04cB3B0f89DEB 0xFb28B2A4c940bb16FdD7c7F0f844dE529AF309aa 0x16253Adf7372503b92776f0ffaae1323e1514F47".split(" ").includes(a)){hj("trigger",\n"swap");hj("trigger","trading_survey");var c="frequency_select_token"}else["0xB892119e611188adF871e5bE96b9717cb8Bc2034","0x8461a77d4587bDA7bB76226A9893754C702803bc"].includes(a)&&(hj("trigger","apologize"),hj("trigger","swap"),c="apologize");hj("identify",a,{segment:c});window.LogRocket._isInitialized||!localStorage.getItem("username")||location.host.includes("localhost")||(window.LogRocket.init("uenndu / moby"),window.LogRocket.identify(a));window.LogRocket._isInitialized&&LogRocket.getSessionURL(function(b){amplitude.getInstance().setUserProperties({logRocketURL:b})})}\nfunction onTradingViewLoaded(a){if(window.LogRocket._isInitialized){var c=a._iFrame.contentWindow;a=a._iFrame.contentDocument;if(!a.getElementById("logrocket")){var b=a.createElement("script");b.id="logrocket";b.src="https://cdn.lr-ingest.io/LogRocket.min.js";b.crossorigin="anonymous";b.onload=function(){c.LogRocket.init("uenndu/moby",{mergeIframes:!0})};a.body.appendChild(b)}}}(window.walletAddress||localStorage.getItem("username"))&&onSetUserId(window.walletAddress||localStorage.getItem("username"));</script>
+    \n\n
+    <script type="text/javascript"
+        id="">_atrk_opts = { atrk_acct: "Oi9nx1k6p920J2", domain: "arken.finance", dynamic: !0 }; (function () { var a = document.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = "https://certify-js.alexametrics.com/atrk.js"; var b = document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b) })();</script>
+    \n<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=Oi9nx1k6p920J2" style="display:none"
+            height="1" width="1" alt=""></noscript>\n<style>
+        \n @media screen and (min-width: 600px) {
+            \n ._hj-widget-container ._hj-1tTKm__styles__surveyContainer._hj-3QsYe__styles__positionLeft {
+                \n left: 0 !important;
+                \n
+            }
+
+            \n
+        }
+
+        \n
+    </style>\n \n
+    <script type="text/javascript"
+        id="">location.host.includes("localhost") || Sentry.init({ dsn: "https://cff5c0e7d24645499d43dff4e6a58041@o32236.ingest.sentry.io/5790954", integrations: [new Sentry.Integrations.BrowserTracing], tracesSampleRate: 1 });</script>
+    <script type="text/javascript"
+        id="">var params = "{\\x22language\\x22:\\x22en\\x22}"; window.amplitude && amplitude.getInstance().setUserProperties(JSON.parse(params)); mixpanel && mixpanel.register(JSON.parse(params));</script>
+    <script type="text/javascript"
+        id="">var params = "{\\x22language\\x22:\\x22en\\x22}"; window.amplitude && amplitude.getInstance().setUserProperties(JSON.parse(params)); mixpanel && mixpanel.register(JSON.parse(params));</script>
+    <iframe id="intercom-frame"
+        style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;"
+        aria-hidden="true" tabindex="-1" title="Intercom"></iframe>
+    <div class="intercom-lightweight-app">
+        <style id="intercom-lightweight-app-style" type="text/css">
+            \n @keyframes intercom-lightweight-app-launcher {
+                \n from {
+                    \n opacity: 0;
+                    \n transform: scale(0.5);
+                    \n
+                }
+
+                \n to {
+                    \n opacity: 1;
+                    \n transform: scale(1);
+                    \n
+                }
+
+                \n
+            }
+
+            \n\n @keyframes intercom-lightweight-app-gradient {
+                \n from {
+                    \n opacity: 0;
+                    \n
+                }
+
+                \n to {
+                    \n opacity: 1;
+                    \n
+                }
+
+                \n
+            }
+
+            \n\n @keyframes intercom-lightweight-app-messenger {
+                \n 0% {
+                    \n opacity: 0;
+                    \n transform: scale(0);
+                    \n
+                }
+
+                \n 40% {
+                    \n opacity: 1;
+                    \n
+                }
+
+                \n 100% {
+                    \n transform: scale(1);
+                    \n
+                }
+
+                \n
+            }
+
+            \n\n .intercom-lightweight-app {
+                \n position: fixed;
+                \n z-index: 2147483001;
+                \n width: 0;
+                \n height: 0;
+                \n font-family: intercom-font, "Helvetica Neue", "Apple Color Emoji", Helvetica, Arial, sans-serif;
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-gradient {
+                \n position: fixed;
+                \n z-index: 2147483002;
+                \n width: 500px;
+                \n height: 500px;
+                \n bottom: 0;
+                \n right: 0;
+                \n pointer-events: none;
+                \n background: radial-gradient(\n ellipse at bottom right, \n rgba(29, 39, 54, 0.16) 0%, \n rgba(29, 39, 54, 0) 72%);
+                \n animation: intercom-lightweight-app-gradient 200ms ease-out;
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher {
+                \n position: fixed;
+                \n z-index: 2147483003;
+                \n padding: 0 !important;
+                \n margin: 0 !important;
+                \n border: none;
+                \n bottom: 20px;
+                \n right: 20px;
+                \n max-width: 48px;
+                \n width: 48px;
+                \n max-height: 48px;
+                \n height: 48px;
+                \n border-radius: 50%;
+                \n background: #F06234;
+                \n cursor: pointer;
+                \n box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
+                \n transition: transform 167ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+                \n box-sizing: content-box;
+                \n
+            }
+
+            \n\n\n .intercom-lightweight-app-launcher:hover {
+                \n transition: transform 250ms cubic-bezier(0.33, 0.00, 0.00, 1.00);
+                \n transform: scale(1.1)\n
+            }
+
+            \n\n .intercom-lightweight-app-launcher:active {
+                \n transform: scale(0.85);
+                \n transition: transform 134ms cubic-bezier(0.45, 0, 0.2, 1);
+                \n
+            }
+
+            \n\n\n .intercom-lightweight-app-launcher:focus {
+                \n outline: none;
+                \n\n \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon {
+                \n display: flex;
+                \n align-items: center;
+                \n justify-content: center;
+                \n position: absolute;
+                \n top: 0;
+                \n left: 0;
+                \n width: 48px;
+                \n height: 48px;
+                \n transition: transform 100ms linear, opacity 80ms linear;
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon-open {
+                \n \n opacity: 1;
+                \n transform: rotate(0deg) scale(1);
+                \n \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon-open svg {
+                \n width: 24px;
+                \n height: 24px;
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon-open svg path {
+                \n fill: rgb(255, 255, 255);
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon-self-serve {
+                \n \n opacity: 1;
+                \n transform: rotate(0deg) scale(1);
+                \n \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon-self-serve svg {
+                \n height: 44px;
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon-self-serve svg path {
+                \n fill: rgb(255, 255, 255);
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-custom-icon-open {
+                \n max-height: 24px;
+                \n max-width: 24px;
+                \n\n \n opacity: 1;
+                \n transform: rotate(0deg) scale(1);
+                \n \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon-minimize {
+                \n \n opacity: 0;
+                \n transform: rotate(-60deg) scale(0);
+                \n \n
+            }
+
+            \n\n .intercom-lightweight-app-launcher-icon-minimize svg path {
+                \n fill: rgb(255, 255, 255);
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-messenger {
+                \n position: fixed;
+                \n z-index: 2147483003;
+                \n overflow: hidden;
+                \n background-color: white;
+                \n animation: intercom-lightweight-app-messenger 250ms cubic-bezier(0, 1, 1, 1);
+                \n transform-origin: bottom right;
+                \n \n width: 400px;
+                \n height: calc(100% - 40px);
+                \n max-height: 704px;
+                \n min-height: 250px;
+                \n right: 20px;
+                \n bottom: 20px;
+                \n box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+                \n \n\n border-radius: 16px;
+                \n
+            }
+
+            \n\n .intercom-lightweight-app-messenger-header {
+                \n height: 64px;
+                \n border-bottom: none;
+                \n background: #F06234\n\n \n
+            }
+
+            \n\n .intercom-lightweight-app-messenger-footer {
+                \n position: absolute;
+                \n bottom: 0;
+                \n width: 100%;
+                \n height: 80px;
+                \n background: #fff;
+                \n font-size: 14px;
+                \n line-height: 21px;
+                \n border-top: 1px solid rgba(0, 0, 0, 0.05);
+                \n box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+                \n \n
+            }
+
+            \n\n @media print {
+                \n .intercom-lightweight-app {
+                    \n display: none;
+                    \n
+                }
+
+                \n
+            }
+
+            \n
+        </style>
+    </div>
+</body>
+
+</html>'

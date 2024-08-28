@@ -1,0 +1,19 @@
+{
+"name": "SureBet",
+"short_name": "SureBet",
+"icons": [
+{
+"src": "/assets/base/android-chrome-192x192-e39149a54aa1c2b52a1c0f7657f29c4bf4326c0e11a7ee05f683adab52e9abb2.png",
+"sizes": "192x192",
+"type": "image/png"
+},
+{
+"src": "/assets/base/android-chrome-512x512-26b861d2757966740752ed56a50185b55c561891fb7e6e03c1e277b85633204c.png",
+"sizes": "512x512",
+"type": "image/png"
+}
+],
+"theme_color": "#30437c",
+"background_color": "#30437c",
+"display": "standalone"
+}

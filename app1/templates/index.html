@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>有道体育</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./static/images/favicon.ico" />
+  <script type="text/javascript" src="./static/js/jquery-3.7.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./static/js/clipboard-1.5.15.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./static/js/data.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./static/js/index.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="./static/css/index.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-loading">
+      <div class="container-loading-spinner">
+        <svg viewBox="25 25 50 50" class="container-loading-spinner-circular">
+          <circle cx="50" cy="50" r="20" fill="none" class="container-loading-spinner-circular-path"></circle>
+        </svg>
+      </div>
+    </div>
+    <div class="container-left">
+      <div class="container-left-head">
+
+
+        <div class="container-left-head-platform">
+          <div class="container-left-head-platform-form">
+			<div style="display: flex;justify-content: space-between;">
+				<div class="container-left-head-platform-title">平台选择</div>
+				<div style="display:flex; justify-content: end;margin-right: 10px;">
+				<div class="container-left-head-platform-all" style="position:relative;width: max-content;">
+					<input class="container-left-head-platform-all-input" type="checkbox" />
+					<span class="container-left-head-platform-all-text">全选</span>
+					<div class="container-left-head-platform-all-cover" style="z-index:99;position:absolute;top:0;left:0;width:100%;height:100%;padding: 3px;"></div>
+				</div>
+			</div>
+			</div>
+			
+			<!--
+            <div class="container-left-head-platform-title">平台选择</div>
+
+			-->
+			
+            <div class="container-left-head-platform-content"></div>
+          </div>
+          <img class="container-left-head-platform-image" src="./static/images/301.jpg" alt="">
+        </div>
+
+
+        <div class="container-left-head-data">
+          <div class="container-left-head-data-title">数据项</div>
+          <div class="container-left-head-data-content">
+            <div code="profitarbitrage"
+              class="container-left-head-data-content-item container-left-head-data-content-item-selected">利润套利</div>
+            <div code="intervalprofit" class="container-left-head-data-content-item">区间套利</div>
+            <div code="crownzone" class="container-left-head-data-content-item">皇冠专区</div>
+            <div code="valuebeyonddata" class="container-left-head-data-content-item">超值数据</div>
+            <div code="valueBasketball" class="container-left-head-data-content-item">价值篮球</div>
+          </div>
+        </div>
+
+        <div class="container-left-head-profit">
+          <div class="container-left-head-profit-up">
+            <div class="container-left-head-profit-up-body">
+              <div class="container-left-head-profit-up-body-icon"></div>
+              <div class="container-left-head-profit-up-body-title">
+                <select class="container-left-head-profit-up-body-title-select"></select>
+              </div>
+            </div>
+          </div>
+          <div class="container-left-head-profit-down">
+            <div class="container-left-head-profit-down-body">
+              <div class="container-left-head-profit-down-body-icon">利润(%)</div>
+              <div class="container-left-head-profit-down-body-title">
+                <input value="0" class="container-left-head-profit-down-body-title-input" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-left-head-lang">
+          <div class="container-left-head-lang-title">英汉</div>
+          <div class="container-left-head-lang-content">
+            <div class="container-left-head-lang-content-body">
+              <div lang="EN"
+                class="container-left-head-lang-content-body-up container-left-head-lang-content-body-selected">英</div>
+              <div lang="ZH" class="container-left-head-lang-content-body-down">汉</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-left-head-refresh">
+          <div class="container-left-head-refresh-content">
+            <div class="container-left-head-refresh-content-body">
+              <div class="container-left-head-refresh-content-body-icon"></div>
+              <div class="container-left-head-refresh-content-body-title">刷新</div>
+			  <div class="container-left-head-refresh-content-body-num"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-left-head-selective">
+          <div class="container-left-head-selective-title">价值篮球</div>
+          <div class="container-left-head-selective-content">
+            <div class="container-left-head-selective-content-up">
+              <div class="container-left-head-selective-content-up-refresh">刷新</div>
+              <div class="container-left-head-selective-content-up-auto-refresh">
+                <label class="material-checkbox">
+                  <input type="checkbox" checked='checked'>
+                  <span class="checkmark"></span>
+                  自动刷新
+                </label>
+              </div>
+              <div class="container-left-head-selective-content-up-interval">间隔 <div
+                  class="container-left-head-selective-content-up-interval-inputs"><input type="text">秒</div>
+              </div>
+              <div class="container-left-head-selective-content-up-floating-alarm">
+                <label class="material-checkbox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                  浮动警报
+                </label>
+              </div>
+            </div>
+
+            <div class="container-left-head-selective-content-down">
+              <div class="container-left-head-selective-content-down-item">
+                <div class="container-left-head-selective-content-down-item-left">全场让球+/-</div>
+                <div class="container-left-head-selective-content-down-item-right">
+                  <input type="text">
+                  盘口
+                </div>
+              </div>
+              <div class="container-left-head-selective-content-down-item">
+                <div class="container-left-head-selective-content-down-item-left">全场大小+/-</div>
+                <div class="container-left-head-selective-content-down-item-right">
+                  <input type="text">
+                  盘口
+                </div>
+              </div>
+              <div class="container-left-head-selective-content-down-item">
+                <div class="container-left-head-selective-content-down-item-left">半场让球+/-</div>
+                <div class="container-left-head-selective-content-down-item-right">
+                  <input type="text">
+                  盘口
+                </div>
+              </div>
+              <div class="container-left-head-selective-content-down-item">
+                <div class="container-left-head-selective-content-down-item-left">半场大小+/-</div>
+                <div class="container-left-head-selective-content-down-item-right">
+                  <input type="text">
+                  盘口
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="container-left-body">
+        <div class="container-left-body-top"></div>
+        <div class="container-left-body-bottom"></div>
+        <div class="container-left-body-title">
+          <div class="container-left-body-title-profit container-left-body-profit">利润</div>
+          <div class="container-left-body-title-platform container-left-body-platform">参与平台</div>
+          <div class="container-left-body-title-time container-left-body-time">开赛时间</div>
+          <div class="container-left-body-title-project container-left-body-project">项目</div>
+          <div class="container-left-body-title-position container-left-body-position">套利盘口</div>
+          <div class="container-left-body-title-price container-left-body-price">赔率</div>
+        </div>
+        <div class="container-left-body-content"></div>
+      </div>
+      <div class="container-left-footer">
+        <div class="container-left-footer-remark">软件隐藏功能：鼠标单击球队所在行则自动复制主队队名，单击赛事所在行则自动复制赛事名称</div>
+        <div class="container-left-footer-page">
+          <div class="container-left-footer-page-previous">上一页</div>
+          <div class="container-left-footer-page-next">下一页</div>
+        </div>
+      </div>
+    </div>
+    <div class="container-right">
+      <div class="container-right-calc">
+        <div class="container-right-calc-title">便捷计算器</div>
+        <div class="container-right-calc-content"></div>
+      </div>
+	  <div>
+	    <div class="container-right-category"></div>
+	  </div>
+
+    </div>
+	
+	<div class="copy">
+		
+	</div>
+  </div>
+</body>
+
+</html>

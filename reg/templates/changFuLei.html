@@ -1,0 +1,25 @@
+<!-- templates/yourapp/custom_action.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Action</title>
+</head>
+<body>
+    <h2>Custom Action</h2>
+    <form method="post" >
+        {% csrf_token %}
+        <label for="userid">Enter userid:</label>
+        <input type="text" name="userid" required>
+
+        <label for="fuid">Enter fuid:</label>
+        <input type="text" name="fuid" required>
+
+        <label for="fuids">Enter :</label>
+        <input type="text" name="fuids" required>  
+              
+        <button type="submit">Execute</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title> 日志 </title>
+
+    <style>
+        /* 为所有的 li 元素定义字体大小和颜色 */
+        li {
+            font-size: 5px; /* 设置字体大小为 20px */
+            color: rgb(0, 0, 0); /* 设置字体颜色为红色 */
+        }
+    </style>
+</head>
+<body>
+    <p>- log -</p>
+    <ul id="log-list"></ul>
+    <textarea id="chat-log" cols="100" rows="20" hidden="True"></textarea><br>
+    <input id="chat-message-input" type="text" size="100" hidden="True"><br>
+    <input id="chat-message-submit" type="button" value="Send" hidden="True">
+    {{ room_name|json_script:"room-name" }}
+    <script>
+        const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+        const chatSocket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + roomName
+            + '/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value += (data.message + '\n');
+
+            const li = document.createElement('li');
+            li.textContent = data.message;
+
+            var logList = document.querySelector('#log-list'); 
+
+            // 如果 logList 有子元素，将新的 li 插入到第一个子元素前面
+            if (logList.firstChild) {
+                logList.insertBefore(li, logList.firstChild);
+            } else {
+                // 如果 logList 没有子元素，直接添加 li
+                logList.appendChild(li);
+            }
+
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
+
+        document.querySelector('#chat-message-submit').onclick = function(e) {
+            const messageInputDom = document.querySelector('#chat-message-input');
+            const message = messageInputDom.value;
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }));
+            messageInputDom.value = '';
+        };
+    </script>
+</body>
+</html>

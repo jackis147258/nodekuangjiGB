@@ -1,0 +1,109 @@
+<!-- my_custom_page.html -->
+
+
+
+
+{% extends "admin/base_site.html" %}
+{% load custom_filters %}
+
+{% block extrahead %}
+ 
+
+{% endblock %}
+
+{% block content %}
+<h2>ModelA List</h2>
+<table>
+    <thead>
+        <tr>
+            {% for field_name in fields_a %} 
+                <th>{{ field_name}}</th>
+                <th>{{ verbose_names_a.field_name }}</th>
+
+            {% endfor %}
+            <th>Action</th>  <!-- Column for the AJAX Button -->
+        </tr>
+    </thead>
+    <tbody>
+
+
+        {% for item_data in items_a_data %}
+    <tr>
+        {% for field in fields_a %} 
+         
+              <td>{{ item_data|get_item:field }}</td> 
+        {% endfor %}
+        <td><button class="btn btn-primary add-to-modelb" data-id="{{ item.id }}">Add to ModelB</button></td>
+    </tr>
+        {% endfor %}
+
+ 
+    </tbody>
+</table>
+
+<h2>ModelB List</h2>
+<table>
+    <thead>
+        <tr>
+            {% for field_name in fields_b %}
+               
+            <th>{{ field_name}}</th>
+
+            <th>{{ verbose_names_a.field_name }}</th>
+
+
+            {% endfor %}
+            <th>Action</th>  <!-- Column for the AJAX Button -->
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for item_data in items_b_data %}
+    <tr>
+        {% for field in fields_b %}
+        <td>{{ item_data|get_item:field }}</td> 
+        {% endfor %}
+        <td><button class="btn btn-secondary handle-modelb" data-id="{{ item.id }}">Handle</button></td>
+    </tr>
+{% endfor %}
+
+
+ 
+    </tbody>
+</table> 
+
+<script>
+$(document).ready(function() {
+    $(".add-to-modelb").click(function() {
+        const modelAId = $(this).data('id');
+        $.ajax({
+            url: '/app1/add_to_modelb/',
+            type: 'POST',
+            data: {
+                'model_a_id': modelAId,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(response) {
+                alert('Added to ModelB successfully!');
+            }
+        });
+    });
+
+    $(".handle-modelb").click(function() {
+        const modelBId = $(this).data('id');
+        $.ajax({
+            url: '/app1/handle_modelb/',
+            type: 'POST',
+            data: {
+                'model_b_id': modelBId,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(response) {
+                alert('Handled ModelB successfully!');
+            }
+        });
+    });
+});
+</script>
+
+{% endblock %}
